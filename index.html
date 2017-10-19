@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Plus ou moins</title>
+      
+</head>
+<body>  
+    <input type="button" value="Jouer !" onclick="deviner(nbTour);" name="" id="">
+    <script type="text/javascript">
+    	var nbMystere = Math.floor(Math.random()*100);
+		var nbProposition;
+		var nbTour = 0;
+		var nbTourReste = 10;
+
+		function deviner(tours) {
+    		for (var i = 1; i<11; i++) {
+        	var nbProposition = prompt('Devinez le nombre compris entre 0 et 100 !'+' Tours restants : ' + nbTourReste);
+        	if (nbProposition > nbMystere) {
+            	alert("Pas de bras, pas de chocolat !");
+            	nbTourReste = (10 - i);
+        	}
+        	else if (nbProposition < nbMystere){
+            	alert("Dommage !");
+            	nbTourReste = (10 - i);
+        	}
+        	else if (nbProposition == nbMystere) {
+            	alert("Tu déchires ta race ! Le nombre mystère est "+nbMystere);
+           	    break;
+        	}
+        
+    	}        
+	}
+    </script>
+</body>
+</html>
